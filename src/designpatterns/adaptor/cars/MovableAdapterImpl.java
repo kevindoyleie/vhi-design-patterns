@@ -1,4 +1,4 @@
-package designpatterns.adaptor;
+package designpatterns.adaptor.cars;
 
 public class MovableAdapterImpl implements MovableAdapter
 {

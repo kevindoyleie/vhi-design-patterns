@@ -1,5 +1,11 @@
 package designpatterns.adaptor;
 
+import designpatterns.adaptor.cars.AudiA6;
+import designpatterns.adaptor.cars.BugattiVeyron;
+import designpatterns.adaptor.cars.Movable;
+import designpatterns.adaptor.cars.MovableAdapter;
+import designpatterns.adaptor.cars.MovableAdapterImpl;
+import designpatterns.adaptor.mediaplayer.AudioPlayer;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
