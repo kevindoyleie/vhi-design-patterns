@@ -170,8 +170,36 @@ Structuring a system into subsystems helps reduce complexity.  A common design g
 communication and dependencies between subsystems.  One way to achieve this goal is to introduce a
 `facade` object that provides a single, simplified interface to the more general facilities of a subsystem.
 
+Facade pattern hides the complexities of the system and provides an interface to the client using which 
+the client can access the system.
+
+This pattern involves a single class which provides simplified methods required by a client and delegates 
+calls to methods of existing system classes.
+
+Simply put, a facade encapsulates a complex subsystem behind a simple interface. **It hides much of the 
+complexity and makes the subsystem easy to use.**
+
+Also, if we need to use the complex subsystem directly, we still can do that; we aren't forced to use the 
+facade all the time.
+
+Besides, a much simpler interface, there's one more benefit of using this design pattern. **It decouples a 
+client implementation from the complex subsystem**. Thanks to this, we can make changes to the existing 
+subsystem and don't affect a client.
+
+### Consequences
+
+The facade pattern doesn't force us to unwanted tradeoffs, because it only adds additional layers of 
+abstraction.  Sometimes the pattern can be overused in simple scenarios, which will lead to redundant 
+implementations.
+
 
 ### Real-time examples
+
+`javax.faces.context.FacesContext` uses `LifeCycle`, `ViewHandler`, `NavigationHandler` classes under the 
+hood, but most clients are not aware of that.
+
+`javax.faces.context.ExternalContext` uses `ServletContext`, `HttpSession`, `HttpServletRequest`, 
+`HttpServletResponse` and others inside.
 
 ### Vhi examples
 
