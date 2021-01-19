@@ -6,19 +6,19 @@ public class FuelInjector
 
     public void on()
     {
-        // TODO add functionality
         System.out.println("Turning on fuel injector.");
+        fuelPump.on();
     }
 
     public void inject()
     {
-        // TODO add functionality
         System.out.println("Injecting fuel");
+        fuelPump.pump();
     }
 
     public void off()
     {
-        // TODO add functionality
         System.out.println("Turning off fuel injector.");
+        fuelPump.off();
     }
 }

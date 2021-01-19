@@ -2,30 +2,33 @@ package designpatterns.facade;
 
 public class CoolingController
 {
-    Radiator radiator = new Radiator();
-    TemperatureSensor temperatureSensor = new TemperatureSensor();
+    private final Radiator radiator = new Radiator();
+    private final TemperatureSensor temperatureSensor = new TemperatureSensor();
 
-    public void setTemperatureUpperLimit(int defaultCoolingTemp)
+    public void setTemperatureUpperLimit(int temperatureUpperLimit)
     {
-        // TODO add functionality
-        System.out.println("Setting upper temp limit to " + defaultCoolingTemp);
+        System.out.println("Setting upper temp limit to " + temperatureUpperLimit);
+        temperatureSensor.setTemperatureUpperLimit(temperatureUpperLimit);
     }
 
     public void run()
     {
-        // TODO add functionality
         System.out.println("Running cooling controller");
+
     }
 
     public void cool(int maxAllowedTemp)
     {
-        // TODO add functionality
-        System.out.println("Cool down...");
+        if (temperatureSensor.getTemperature() >= maxAllowedTemp) {
+            System.out.println("Cool down...");
+            radiator.off();
+        } else {
+            radiator.on();
+        }
     }
 
     public void stop()
     {
-        // TODO add functionality
         System.out.println("Turning off cooling controller.");
     }
 }

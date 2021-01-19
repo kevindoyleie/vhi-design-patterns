@@ -4,12 +4,12 @@ public class Radiator
 {
     public void on()
     {
-        // TODO add functionality
+        System.out.println("Radiator on...");
     }
 
     public void off()
     {
-        // TODO add functionality
+        System.out.println("Radiator off...");
     }
 
     public void setSpeed()

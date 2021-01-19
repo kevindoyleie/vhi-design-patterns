@@ -2,8 +2,21 @@ package designpatterns.facade;
 
 public class TemperatureSensor
 {
-    public void getTemperature()
+    private final int temperature = 35;
+    private int temperatureUpperLimit;
+
+    public int getTemperature()
     {
-        // TODO add functionality
+        return temperature;
+    }
+
+    public void setTemperatureUpperLimit(int temperatureUpperLimit)
+    {
+        this.temperatureUpperLimit = temperatureUpperLimit;
+    }
+
+    public int getTemperatureUpperLimit()
+    {
+        return temperatureUpperLimit;
     }
 }

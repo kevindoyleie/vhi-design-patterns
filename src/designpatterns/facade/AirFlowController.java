@@ -6,14 +6,12 @@ public class AirFlowController
 
     public void takeAir()
     {
-        // TODO add functionality
         System.out.println("Taking in air...");
         airFlowMeter.getMeasurement();
     }
 
     public void off()
     {
-        // TODO add functionality
         System.out.println("Turning off air flow...");
     }
 }

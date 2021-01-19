@@ -4,6 +4,6 @@ public class AirFlowMeter
 {
     public void getMeasurement()
     {
-        // TODO add functionality
+        System.out.println("Air flow - get measurement...");
     }
 }
