@@ -2,7 +2,7 @@ package designpatterns.adaptor.cars;
 
 public class MovableAdapterImpl implements MovableAdapter
 {
-    private Movable luxuryCars;
+    private final Movable luxuryCars;
 
     public MovableAdapterImpl(Movable car)
     {

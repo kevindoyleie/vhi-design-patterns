@@ -1,4 +1,4 @@
-# vhi-designpatterns Workspace
+# Vhi Design Patterns Workspace
 
 Web Team workspace to present and discuss design patterns used within our apps.
 
@@ -33,9 +33,9 @@ code is also more verbose. Though for me, readability weighs more than lines of 
 
 ### Real-time examples
 
-All implementations of `java.lang.Appendable` are infact good example of use of Builder pattern in java. e.g.
+All implementations of `java.lang.Appendable` are in fact good example of use of Builder pattern in java. e.g.
 
-`java.lang.StringBuilder#append()` [Unsynchronized class]
+`java.lang.StringBuilder#append()` [Un-synchronized class]
 
 `java.lang.StringBuffer#append()` [Synchronized class]
 
@@ -56,6 +56,14 @@ Another use can be found in `javax.swing.GroupLayout.Group#addComponent()`.
 
 ### Vhi examples
 
+In the FindAPlanPlanController class we use a builder pattern to build a get quote command for the request to Kana.
+```
+IndicativeQuoteListCommand indicativeQuoteListCommand = quoteService.getIndicativeQuoteListCommandBuilder()
+            .withCoversetCodes(coversets)
+            .withNaturalLanguageFormDetails(details)
+            .withEffectiveDate(funnelStateHolder.getStartDate())
+            .build();
+```
 
 ## Factory Method Pattern
 
@@ -92,6 +100,16 @@ This design pattern has been widely used in JDK, such as:
    pattern has been used.
 
 ### Vhi examples
+
+We use these a lot to build things like quote commands that will be sent to the quote engine.  
+
+For example, in `ContractQueryAxis2ClientImpl`, the `ContractQueryRequestBuilderFactory` is used to create a 
+GetQuoteInput that will be sent to Ciboodle to get a quote.
+```
+GetQuoteInput input = builderFactory.newGetQuoteInputBuilder()
+                                    .withQuoteSetId(quoteSetId)
+                                    .buildGetQuoteInput();
+```
 
 # Structural Patterns
 
@@ -159,6 +177,8 @@ javax.xml.bind.annotation.adapters.XMLAdapter
 ### Vhi examples
 
 
+
+
 ## Facade Pattern
 
 ```
@@ -202,6 +222,8 @@ hood, but most clients are not aware of that.
 `HttpServletResponse` and others inside.
 
 ### Vhi examples
+
+
 
 ## Controller Pattern
 

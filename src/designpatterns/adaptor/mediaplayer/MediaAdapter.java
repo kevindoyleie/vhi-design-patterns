@@ -2,7 +2,7 @@ package designpatterns.adaptor.mediaplayer;
 
 public class MediaAdapter implements MediaPlayer
 {
-    AdvancedMediaPlayer advancedMediaPlayer;
+    private AdvancedMediaPlayer advancedMediaPlayer;
 
     public MediaAdapter(String audioType)
     {
