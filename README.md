@@ -5,6 +5,20 @@ Web Team workspace to present and discuss design patterns used within our apps.
 
 # Creational Patterns
 
+In software engineering, creational design patterns are design patterns that deal with object creation mechanisms, 
+trying to create objects in a manner suitable to the situation. The basic form of object creation could result in 
+design problems or in added complexity to the design. Creational design patterns solve this problem by somehow 
+controlling this object creation.
+
+Creational design patterns are composed of two dominant ideas. One is encapsulating knowledge about which concrete 
+classes the system uses. Another is hiding how instances of these concrete classes are created and combined.
+
+Creational design patterns are further categorized into object-creational patterns and Class-creational patterns, where 
+Object-creational patterns deal with Object creation and Class-creational patterns deal with Class-instantiation. In 
+greater details, Object-creational patterns defer part of its object creation to another object, while Class-creational 
+patterns defer its object creation to subclasses.
+
+
 ## Builder Pattern
 ```
 Separate the construction of a complex object from its representation so that the same construction 
@@ -65,6 +79,7 @@ IndicativeQuoteListCommand indicativeQuoteListCommand = quoteService.getIndicati
             .build();
 ```
 
+
 ## Factory Method Pattern
 
 ```
@@ -111,10 +126,13 @@ GetQuoteInput input = builderFactory.newGetQuoteInputBuilder()
                                     .buildGetQuoteInput();
 ```
 
+
+
 # Structural Patterns
 
 Structural patterns are concerned with how classes and object are composed to form larger structures.  
 Structural class patterns use inheritance to compose interfaces or implementations.
+
 
 ## Adaptor Pattern
 
@@ -124,7 +142,9 @@ together that couldn't otherwise because of incompatible interfaces.
 ```
 
 #### Also Known As
+```
 Wrapper
+```
 
 An adapter allows two incompatible interfaces to work together. This is the real-world definition for an 
 adapter. Interfaces may be incompatible, but the inner functionality should suit the need. The adapter design 
@@ -142,6 +162,7 @@ Use the adaptor pattern when
 Adapter pattern lets you wrap an otherwise incompatible object in an adapter to make it compatible with 
 another class.
  
+
 ### Structure
 
 A `class adaptor` uses multiple inheritance to adapt one interface to another.
@@ -235,6 +256,13 @@ int partnerId = authenticationService.getUserPartnerRef(user);
 String[] addressFields = giosDataSourceService.getLatestCoord(Integer.toString(partnerId), COORDINATE_TYPE_POSTAL_ADDRESS);
 ```
 
+
+# Behavioral Patterns
+
+In software engineering, behavioral design patterns are design patterns that identify common communication patterns
+among objects. By doing so, these patterns increase flexibility in carrying out communication.
+                      
+
 ## Controller Pattern
 
 ```
@@ -242,6 +270,96 @@ The pattern relates to the design of Web applications. It provides a centralized
 requests.
 ```
 
+It is "a _controller_ that handles all requests for a website", which is a useful structure for web application
+developers to achieve the flexibility and reuse without code redundancy.
+
+The controller is an entrance for users to handle requests in the system. It realizes authentication by playing the
+role of delegating helper or initiate contact retrieval.
+
+Note: the front controller pattern is a specialized kind of mediator pattern.
+
+### Benefits and liabilities
+
+There are three benefits for using front controller pattern:
+* **Centralized control**.  Front controller handles all the requests to the web application. This implementation of
+  centralized control that avoids using multiple controllers is desirable for enforcing application-wide policies
+  such as users tracking and security.
+* **Thread-safety**.  A new command object arises when receiving a new request and the command objects are not meant
+  to be thread safe.  Thus, it will be safe in the command classes. Though safety is not guaranteed when threading
+  issues are gathered, codes that act with command is still thread safe.
+* **Configurability**.  Since only one front controller is needed in web application, the configuration of web
+  applications implementation is largely simplified. The handler accomplishes the rest of dispatching so that it is
+  not required to change anything before adding new commands with dynamic ones.
+
+In terms of liability, front controllers that determine the following activities by searching the database or XML
+documents, performance might be decreased. And implementation of front controller to existed systems always
+involving replacing the current ones, which makes it harder for beginners to start with.
+
+### Relationship with MVC pattern
+
+1. In order to improve system reliability and maintainability, duplicated codes should be avoided and centralized when
+   they are of the same common logic through the whole system.
+2. The data for the application is better to be handled in one location, thus there will be no need to duplicate
+   database retrieval code.
+3. Different roles in the MVC pattern should be separated to increase testability, which is also true for controller
+   part in the MVC pattern.
+
+#### Comparison
+
+|            | Page Controller      | Front Controller |
+| -----------| ----------- | ----------- |
+| Base class | Base class is needed and will grow simultaneously with the development of the application. | The centralization of solving all requests is easier to modify than base class method. |
+| Security | Low security because various objects react differently without consistency.   | High. The controller is implemented in coordinated fashion, making the application safer. |
+| Logical Page | Single object on each logical page. | Only one controller handles all requests. |
+| Complexity | Low   | High        |
+
 ### Real-time examples
 
 ### Vhi examples
+
+## Mediator Pattern
+
+```
+Define an object that encapsulates how a set of objects interact.  Mediator promotes loose coupling by keeping 
+objects from referring to each other explicitly, and lets you vary their interaction independently.
+```
+
+In software engineering, the mediator pattern defines an object that encapsulates how a set of objects interact. 
+This pattern is considered to be a behavioral pattern due to the way it can alter the program's running behavior.
+
+In object-oriented programming, programs often consist of many classes. Business logic and computation are 
+distributed among these classes.  However, as more classes are added to a program, especially during maintenance 
+and/or refactoring, the problem of communication between these classes may become more complex.  This makes the 
+program harder to read and maintain.  Furthermore, it can become difficult to change the program, since any change 
+may affect code in several other classes.
+
+With the mediator pattern, communication between objects is encapsulated within a mediator object.  Objects no 
+longer communicate directly with each other, but instead communicate through the mediator.  This reduces the 
+dependencies between communicating objects, thereby reducing coupling.
+
+### What problems can the Mediator design pattern solve?
+* Tight coupling between a set of interacting objects should be avoided.
+* It should be possible to change the interaction between a set of objects independently.
+
+Defining a set of interacting objects by accessing and updating each other directly is inflexible because it tightly 
+couples the objects to each other and makes it impossible to change the interaction independently of (without having 
+to change) the objects.  And it stops the objects from being reusable and makes them hard to test.
+
+_Tightly coupled objects_ are hard to implement, change, test, and reuse because they refer to and know about many 
+objects.
+ 
+### What solution does the Mediator design pattern describe?
+
+* Define a separate (mediator) object that encapsulates the interaction between a set of objects.
+* Objects delegate their interaction to a mediator object instead of interacting with each other directly.
+
+The objects interact with each other indirectly through a mediator object that controls and coordinates the interaction.
+
+This makes the objects loosely coupled.  They only refer to and know about their mediator object and have no 
+explicit knowledge of each other.
+
+The essence of the Mediator Pattern is to "_define an object that encapsulates how a set of objects interact_".  It 
+promotes loose coupling by keeping objects from referring to each other explicitly, and it allows their interaction to 
+be varied independently.  Client classes can use the mediator to send messages to other clients, and can receive 
+messages from other clients via an event on the mediator class.
+
