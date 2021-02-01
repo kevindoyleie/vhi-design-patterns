@@ -223,7 +223,17 @@ hood, but most clients are not aware of that.
 
 ### Vhi examples
 
+In `WAM_SERVICES` there are a few examples of the facade pattern
 
+In the `ForgotPasswordPINServiceWrapper` class, we hide what's going on in `ldapService` and 
+`sessionInvalidUserService`.
+
+In the UserContactDetailsWrapper class, we create an interface that calls many services under the hood. 
+For example:
+```
+int partnerId = authenticationService.getUserPartnerRef(user);
+String[] addressFields = giosDataSourceService.getLatestCoord(Integer.toString(partnerId), COORDINATE_TYPE_POSTAL_ADDRESS);
+```
 
 ## Controller Pattern
 
