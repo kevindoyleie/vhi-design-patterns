@@ -276,7 +276,7 @@ developers to achieve the flexibility and reuse without code redundancy.
 The controller is an entrance for users to handle requests in the system. It realizes authentication by playing the
 role of delegating helper or initiate contact retrieval.
 
-Note: the front controller pattern is a specialized kind of mediator pattern.
+Note: the front controller pattern is a specialized kind of [mediator](#mediator-pattern) pattern.
 
 ### Benefits and liabilities
 
