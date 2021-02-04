@@ -69,11 +69,12 @@ Another use can be found in `javax.swing.GroupLayout.Group#addComponent()`.
 
 In the FindAPlanPlanController class we use a builder pattern to build a get quote command for the request to Kana.
 
-    IndicativeQuoteListCommand indicativeQuoteListCommand = quoteService.getIndicativeQuoteListCommandBuilder()
-                                                                        .withCoversetCodes(coversets)
-                                                                        .withNaturalLanguageFormDetails(details)
-                                                                        .withEffectiveDate(funnelStateHolder.getStartDate())
-                                                                        .build();
+    IndicativeQuoteListCommand indicativeQuoteListCommand = 
+                quoteService.getIndicativeQuoteListCommandBuilder()
+                            .withCoversetCodes(coversets)
+                            .withNaturalLanguageFormDetails(details)
+                            .withEffectiveDate(funnelStateHolder.getStartDate())
+                            .build();
 
 
 ## Factory Method Pattern
