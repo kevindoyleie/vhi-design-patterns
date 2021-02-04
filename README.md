@@ -369,7 +369,7 @@ messages from other clients via an event on the mediator class.
 
 by _Erich Gamma_, _Richard Helm_, _Ralph Johnson_, _John Vlissides_.
 
-The best desciprion I can give this book is actually on the back in a quote:
+The best desciption I can give this book is actually on the back in a quote:
 ```
 This book is an important contribution to practising object designers and developers!  Have you ever tried to 
 describe an idea that you don't have a precise name for?  It can be frustrating.  _Design Patterns_ organizes and 
