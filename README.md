@@ -120,12 +120,11 @@ We use these a lot to build things like quote commands that will be sent to the 
 
 For example, in `ContractQueryAxis2ClientImpl`, the `ContractQueryRequestBuilderFactory` is used to create a 
 GetQuoteInput that will be sent to Ciboodle to get a quote.
-```
+```java
 GetQuoteInput input = builderFactory.newGetQuoteInputBuilder()
                                     .withQuoteSetId(quoteSetId)
                                     .buildGetQuoteInput();
 ```
-
 
 
 # Structural Patterns
@@ -188,7 +187,7 @@ An object adapter
 
 ### Real-time examples
    
-```
+```java
 java.util.Arrays#asList()
 java.util.Collections#list()
 java.util.Collections#enumeration()
@@ -251,7 +250,7 @@ In the `ForgotPasswordPINServiceWrapper` class, we hide what's going on in `ldap
 
 In the UserContactDetailsWrapper class, we create an interface that calls many services under the hood. 
 For example:
-```
+```java
 int partnerId = authenticationService.getUserPartnerRef(user);
 String[] addressFields = giosDataSourceService.getLatestCoord(Integer.toString(partnerId), COORDINATE_TYPE_POSTAL_ADDRESS);
 ```
