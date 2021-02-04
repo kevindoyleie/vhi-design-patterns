@@ -54,37 +54,32 @@ All implementations of `java.lang.Appendable` are in fact good example of use of
 
 `java.nio.ByteBuffer#put()` (also on CharBuffer, ShortBuffer, IntBuffer, LongBuffer, FloatBuffer and DoubleBuffer)
 
-```StringBuilder builder = new StringBuilder("Temp");
-String data = builder.append(1)
-.append(true)
-.append("friend")
-.toString();
-System.out.println(data);
+    StringBuilder builder = new StringBuilder("Temp");
+    String data = builder.append(1)
+                         .append(true)
+                         .append("friend")
+                         .toString();
+    System.out.println(data);
 
-Output:
-Temp1truefriend
-```
+Output: `Temp1truefriend`
 
 Another use can be found in `javax.swing.GroupLayout.Group#addComponent()`.
 
 ### Vhi examples
 
 In the FindAPlanPlanController class we use a builder pattern to build a get quote command for the request to Kana.
-```
-IndicativeQuoteListCommand indicativeQuoteListCommand = quoteService.getIndicativeQuoteListCommandBuilder()
-            .withCoversetCodes(coversets)
-            .withNaturalLanguageFormDetails(details)
-            .withEffectiveDate(funnelStateHolder.getStartDate())
-            .build();
-```
+
+    IndicativeQuoteListCommand indicativeQuoteListCommand = quoteService.getIndicativeQuoteListCommandBuilder()
+                                                                        .withCoversetCodes(coversets)
+                                                                        .withNaturalLanguageFormDetails(details)
+                                                                        .withEffectiveDate(funnelStateHolder.getStartDate())
+                                                                        .build();
 
 
 ## Factory Method Pattern
 
-```
-Define an interface for creating an object, but let subclasses decide which class to instantiate.  Factory 
-Methods lets a class defer instantiation to subclasses.
-```
+> Define an interface for creating an object, but let subclasses decide which class to instantiate.  Factory 
+> Methods lets a class defer instantiation to subclasses.
 
 Factory pattern is one of the most used design patterns in Java. This type of design pattern comes under 
 creational pattern as this pattern provides one of the best ways to create an object.
@@ -93,7 +88,7 @@ In Factory pattern, we create an object without exposing the creation logic to t
 newly created object using a common interface.
 
 #### Also Known As
-Virtual Constructor
+`Virtual Constructor`
 
 ### Benefits and Advantages of Factory Pattern
 
@@ -119,11 +114,10 @@ We use these a lot to build things like quote commands that will be sent to the 
 
 For example, in `ContractQueryAxis2ClientImpl`, the `ContractQueryRequestBuilderFactory` is used to create a 
 GetQuoteInput that will be sent to Ciboodle to get a quote.
-```java
-GetQuoteInput input = builderFactory.newGetQuoteInputBuilder()
-                                    .withQuoteSetId(quoteSetId)
-                                    .buildGetQuoteInput();
-```
+
+    GetQuoteInput input = builderFactory.newGetQuoteInputBuilder()
+                                        .withQuoteSetId(quoteSetId)
+                                        .buildGetQuoteInput();
 
 
 # Structural Patterns
@@ -134,21 +128,16 @@ Structural class patterns use inheritance to compose interfaces or implementatio
 
 ## Adaptor Pattern
 
-```
-Convert the interface of a class into another interface clients expect.  Adaptor lets classes work 
-together that couldn't otherwise because of incompatible interfaces.
-```
+> Convert the interface of a class into another interface clients expect.  Adaptor lets classes work 
+> together that couldn't otherwise because of incompatible interfaces.
 
 #### Also Known As
-```
-Wrapper
-```
+`Wrapper`
 
 An adapter allows two incompatible interfaces to work together. This is the real-world definition for an 
 adapter. Interfaces may be incompatible, but the inner functionality should suit the need. The adapter design 
 pattern allows otherwise incompatible classes to work together by converting the interface of one class into 
 an interface expected by the clients.
-
 
 Use the adaptor pattern when
 * You want to use an existing class, and its interface does not match the one you need.
@@ -186,12 +175,10 @@ An object adapter
 
 ### Real-time examples
    
-```java
-java.util.Arrays#asList()
-java.util.Collections#list()
-java.util.Collections#enumeration()
-javax.xml.bind.annotation.adapters.XMLAdapter
-```
+    java.util.Arrays#asList()
+    java.util.Collections#list()
+    java.util.Collections#enumeration()
+    javax.xml.bind.annotation.adapters.XMLAdapter
 
 ### Vhi examples
 
@@ -200,10 +187,8 @@ javax.xml.bind.annotation.adapters.XMLAdapter
 
 ## Facade Pattern
 
-```
-Provide a unified interface to a set of interfaces in a subsystem.  Facade defines a higher-level 
-interface that makes the subsystem easier to use.
-```
+> Provide a unified interface to a set of interfaces in a subsystem.  Facade defines a higher-level 
+> interface that makes the subsystem easier to use.
 
 Structuring a system into subsystems helps reduce complexity.  A common design goal is to minimize the
 communication and dependencies between subsystems.  One way to achieve this goal is to introduce a
@@ -249,10 +234,10 @@ In the `ForgotPasswordPINServiceWrapper` class, we hide what's going on in `ldap
 
 In the UserContactDetailsWrapper class, we create an interface that calls many services under the hood. 
 For example:
-```java
-int partnerId = authenticationService.getUserPartnerRef(user);
-String[] addressFields = giosDataSourceService.getLatestCoord(Integer.toString(partnerId), COORDINATE_TYPE_POSTAL_ADDRESS);
-```
+
+    int partnerId = authenticationService.getUserPartnerRef(user);
+    String[] addressFields = 
+        giosDataSourceService.getLatestCoord(Integer.toString(partnerId), COORDINATE_TYPE_POSTAL_ADDRESS);
 
 
 # Behavioral Patterns
@@ -263,10 +248,8 @@ among objects. By doing so, these patterns increase flexibility in carrying out 
 
 ## Controller Pattern
 
-```
-The pattern relates to the design of Web applications. It provides a centralized entry point for handling 
-requests.
-```
+> The pattern relates to the design of Web applications. It provides a centralized entry point for handling 
+> requests.
 
 It is "a _controller_ that handles all requests for a website", which is a useful structure for web application
 developers to achieve the flexibility and reuse without code redundancy.
@@ -317,10 +300,8 @@ involving replacing the current ones, which makes it harder for beginners to sta
 
 ## Mediator Pattern
 
-```
-Define an object that encapsulates how a set of objects interact.  Mediator promotes loose coupling by keeping 
-objects from referring to each other explicitly, and lets you vary their interaction independently.
-```
+> Define an object that encapsulates how a set of objects interact.  Mediator promotes loose coupling by keeping 
+> objects from referring to each other explicitly, and lets you vary their interaction independently.
 
 In software engineering, the mediator pattern defines an object that encapsulates how a set of objects interact. 
 This pattern is considered to be a behavioral pattern due to the way it can alter the program's running behavior.
@@ -347,7 +328,6 @@ _Tightly coupled objects_ are hard to implement, change, test, and reuse because
 objects.
  
 ### What solution does the Mediator design pattern describe?
-
 * Define a separate (mediator) object that encapsulates the interaction between a set of objects.
 * Objects delegate their interaction to a mediator object instead of interacting with each other directly.
 
@@ -368,12 +348,12 @@ messages from other clients via an event on the mediator class.
 by _Erich Gamma_, _Richard Helm_, _Ralph Johnson_, _John Vlissides_.
 
 The best desciption I can give this book is actually on the back in a quote:
-```
-This book is an important contribution to practising object designers and developers!  Have you ever tried to 
-describe an idea that you don't have a precise name for?  It can be frustrating.  _Design Patterns_ organizes and 
-presents a catalog of proven design idioms for structuring, creating, and manipulating objects.  Most importantly, 
-it names these design constructs, allowing teams to share a common vocabulary.
-```
+
+> This book is an important contribution to practising object designers and developers!  Have you ever tried to 
+> describe an idea that you don't have a precise name for?  It can be frustrating.  _Design Patterns_ organizes and 
+> presents a catalog of proven design idioms for structuring, creating, and manipulating objects.  Most importantly, 
+> it names these design constructs, allowing teams to share a common vocabulary.
+
 _Rebecca J. Wirfs-Brock, Director, Object Technology Services, Digitalk._
 
 ## Head First Design Patterns (A Brain Friendly Guide)
