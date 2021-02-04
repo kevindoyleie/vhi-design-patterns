@@ -366,6 +366,7 @@ messages from other clients via an event on the mediator class.
 # Recommended Reading.
 
 ##Design Patterns: Elements of Reusable Object-Oriented Software
+
 by _Erich Gamma_, _Richard Helm_, _Ralph Johnson_, _John Vlissides_.
 
 The best desciprion I can give this book is actually on the back in a quote:
