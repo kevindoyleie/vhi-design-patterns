@@ -363,3 +363,112 @@ promotes loose coupling by keeping objects from referring to each other explicit
 be varied independently.  Client classes can use the mediator to send messages to other clients, and can receive 
 messages from other clients via an event on the mediator class.
 
+# Recommended Reading.
+
+##Design Patterns: Elements of Reusable Object-Oriented Software
+by _Erich Gamma_, _Richard Helm_, _Ralph Johnson_, _John Vlissides_.
+
+The best desciprion I can give this book is actually on the back in a quote:
+```
+This book is an important contribution to practising object designers and developers!  Have you ever tried to 
+describe an idea that you don't have a precise name for?  It can be frustrating.  _Design Patterns_ organizes and 
+presents a catalog of proven design idioms for structuring, creating, and manipulating objects.  Most importantly, 
+it names these design constructs, allowing teams to share a common vocabulary.
+```
+_Rebecca J. Wirfs-Brock, Director, Object Technology Services, Digitalk._
+
+## Head First Design Patterns (A Brain Friendly Guide)
+by _Eric Freeman_, _Elisabeth Robson_, _Bert Bates_, _Kathy Sierra_
+
+## Clean Series
+_Robert C. "Uncle Bob" Martin_.
+
+### Clean Code: A Handbook of Agile Software Craftsmanship.
+
+This book is a must for any developer, software engineer, project manager, team lead, or systems analyst with an 
+interest in producing better code.
+
+Readers will come away from this book understanding:
+* How to tell the difference between good and bad code.
+* How to write good code and how to transform bad code into good code.
+* How to create good names, good functions, good objects, and good classes.
+* How to format code for maximum readability.
+* How to implement complete error handling without obscuring code logic.
+* How to unit test and priactice test-driven development.
+
+### The Clean Coder: A Code of Conduct for Professional Programmers.
+
+Great software is something to marvel at: powerful, elegant, functional, a pleasure to work with as both a developer 
+and user.  Great software isn't written by machines.  It is written by professionals with an unshakable commitment 
+to craftsmanship.  The clean coder will help you become one of them - and earn the pride and fulfillment that they 
+alone possess.
+
+Readers will learn:
+* What it means to behave as a true software craftsman.
+* How to deal with conflict, tight schedules, and unreasonable managers.
+* How to get into the flow of coding, and get past writers block.
+* How to handle unrelenting pressure and avoid burnout.
+* How to combine enduring attitudes with new development paradigms.
+* How to manage your time, and avoid blind alleysm marches, bogs, swamps.
+* How to foster environments where programmers and teams can thrive.
+* When to say "No" - and how to say it.
+* When to say "Yes" - and what yes really means.
+
+### Clean Architecture: A craftsman's Guide to Software Structure and Design
+
+Essential reading for every current or aspiring software architect, systems analyst, system designer, and software 
+manager - and for every programmer who must execute someone else's designs.
+
+* Learn what software architects need to achieve - and core disciplines and practices for achieving it.
+* Master essential software design principles for addressing function, component separation, and data management.
+* See how programming paradigms impose discipline by restricting what developers can do.
+* Understand what's critically important and what's merely a "detail".
+* Implement optimal, high-level structures for web, database, thick-client, console, and embedded applications.
+* Define appropriate boundaries and layers, and organise components and services.
+* See why designs and architectures go wrong, and how to prevent (or fix) these failures.
+
+### Clean Agile: Back to Basics
+
+If you want Agile's true benefits, there are no shortcuts: You need to do Agile right.
+
+Martin describes what Agile is in no uncertain terms: a small discipline that helps small teams manage small 
+projects... with huge implecations because every big project is comprised of many small projects.
+
+* Get back to the basics - what Agile is, was, and should always be.
+* Understand the origins, and proper practice, of SCRUM.
+* Master essential business-facing Agile practices, from small releases and acceptance tests to whole-team 
+  communication.
+* Explore Agile team members' relationships with each other, and with their project.
+* Rediscover indispensable Agile technical practices: TDD, refactoring, simple design, and pair programming.
+* Understand the central roles that values and craftsmanship play in your Agile team's success.
+
+## Test-Driven Development by Example.
+_Kent Beck_
+                 
+This book follows two TDD projects from start to finish, illustrating techniques programmers can use to easily and 
+dramatically increase the quality of their work.  The examples are followed by references to the featured TDD 
+patterns and refactorings.  With its emphasis on the agile methods and fast development strategies, **Test-Driven 
+Development** is sure to inspire readers to embrace these under-utilised but powerful techniques.
+
+Readers will learn to:
+* Solve complicated tasks, beginning with the simple and proceeding to the more complex.
+* Write automated tests before coding.
+* Grow a design organically by refactoring to add design decisions one at a time.
+* Create tests for more complicated logic, including reflection and exceptions.
+* Use patterns to decide what tests to write.
+* Create tests using xUnit, the architecture at the heart of many programmer-oriented testing tools.
+
+## Practical Unit Test with Junit and Mockito
+_Tomek Kaczanowski_
+
+by reading this book you will:
+* Grasp the role and purpose of unit tests
+* Gain confidence that your code really works
+* Write high-quality, readable and maintainable unit tests
+* Learn JUnit and Mockito
+* Avoid common pitfalls when writing unit tests
+* Recognise bad unit tests, and fix them in no time
+* Develop code following the TDD approach
+* Use mocks, stubs and test-spies intelligently
+* Test collections, expected exceptions, time-dependent methods and much more
+* Master tools and techniques your team members have never even heard of
