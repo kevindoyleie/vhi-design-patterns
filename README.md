@@ -365,7 +365,7 @@ messages from other clients via an event on the mediator class.
 
 # Recommended Reading.
 
-##Design Patterns: Elements of Reusable Object-Oriented Software
+## Design Patterns: Elements of Reusable Object-Oriented Software
 
 by _Erich Gamma_, _Richard Helm_, _Ralph Johnson_, _John Vlissides_.
 
