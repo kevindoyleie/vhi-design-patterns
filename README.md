@@ -20,10 +20,9 @@ patterns defer its object creation to subclasses.
 
 
 ## Builder Pattern
-```
-Separate the construction of a complex object from its representation so that the same construction 
-process can create different representations.
-```
+
+> Separate the construction of a complex object from its representation so that the same construction 
+> process can create different representations.
 
 ### Benefits and Advantages of Builder Pattern
 Undoubtedly, the **number of lines of code increase** at least to double in builder pattern, but the effort pays 
