@@ -237,8 +237,8 @@ In the UserContactDetailsWrapper class, we create an interface that calls many s
 For example:
 
     int partnerId = authenticationService.getUserPartnerRef(user);
-    String[] addressFields = 
-        giosDataSourceService.getLatestCoord(Integer.toString(partnerId), COORDINATE_TYPE_POSTAL_ADDRESS);
+    String[] addressFields = giosDataSourceService.getLatestCoord(
+                                Integer.toString(partnerId), COORDINATE_TYPE_POSTAL_ADDRESS);
 
 
 # Behavioral Patterns
