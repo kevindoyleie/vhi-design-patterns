@@ -8,12 +8,13 @@ import static org.junit.Assert.assertNull;
 
 public class FactoryPatternTest
 {
-    private NotificationFactory notificationFactory = new NotificationFactory();
+    private final NotificationFactory notificationFactory = new NotificationFactory();
+    private Notification notification;
 
     @Test
     public void whenNull()
     {
-        Notification notification = notificationFactory.createNotification(null);
+        notification = notificationFactory.createNotification(null);
 
         assertNull(notification);
     }
@@ -21,7 +22,7 @@ public class FactoryPatternTest
     @Test
     public void whenEmptyString()
     {
-        Notification notification = notificationFactory.createNotification("");
+        notification = notificationFactory.createNotification("");
 
         assertNull(notification);
     }
@@ -29,7 +30,7 @@ public class FactoryPatternTest
     @Test
     public void whenSMS()
     {
-        Notification notification = notificationFactory.createNotification("SMS");
+        notification = notificationFactory.createNotification("SMS");
 
         assertEquals("Sending an SMS notification", notification.notifyUser());
     }
@@ -37,7 +38,7 @@ public class FactoryPatternTest
     @Test
     public void whenEmail()
     {
-        Notification notification = notificationFactory.createNotification("EMAIL");
+        notification = notificationFactory.createNotification("EMAIL");
 
         assertEquals("Sending an e-mail notification", notification.notifyUser());
     }
@@ -45,7 +46,7 @@ public class FactoryPatternTest
     @Test
     public void whenPush()
     {
-        Notification notification = notificationFactory.createNotification("PUSH");
+        notification = notificationFactory.createNotification("PUSH");
 
         assertEquals("Sending a push notification", notification.notifyUser());
     }
@@ -53,7 +54,7 @@ public class FactoryPatternTest
     @Test
     public void whenNotDefined()
     {
-        Notification notification = notificationFactory.createNotification("TEST");
+        notification = notificationFactory.createNotification("TEST");
 
         assertNull(notification);
     }
